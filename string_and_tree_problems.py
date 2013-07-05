@@ -81,9 +81,16 @@ print removed_chars
 # lookup in dictionariees is O(1) amortized
 # so let's say this is O(n)
 
+# Write a function that reverses the words in a string.
 
+def reverse_words(string):
+	"""Reverses the words in a string."""
+	word_list = string.split(' ')
+	new_word_list = word_list[-1::-1]
+	return ' '.join([word for word in new_word_list])
 
-
+reversed_words = reverse_words("Do or do not, there is no try.")
+print reversed_words
 
 # 	def dfs(self, query):
 # 		for node in self:

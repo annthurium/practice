@@ -1,3 +1,12 @@
+def factorial(n):
+	"""Returns n!"""
+	if n <= 1:
+		return n
+	else:
+		return n * factorial(n - 1)
+
+print factorial(5)
+
 # output a string in reverse
 def reverse_string(string):
 	"""takes a string as input, returns reversed string as output"""
