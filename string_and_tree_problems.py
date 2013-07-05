@@ -65,16 +65,21 @@ def removeChars(string, remove):
 
 	remove_dict = dict.fromkeys(remove, None)
 
-	new_string = []
-	for letter in string:
-		if letter not in remove_dict:
-			new_string.append(letter)
-
+	def generate_new_string(string, remove_dict):
+		for letter in string:
+			if letter not in remove_dict:
+				yield letter
+	new_string = generate_new_string(string, remove_dict)
 	return ''.join([letter for letter in new_string])
 
-print removeChars('Battle of the Vowels: Hawaii vs Grozny', 'aeiou')
+removed_chars = removeChars('Battle of the Vowels: Hawaii vs Grozny', 'aeiou')
+print removed_chars
 
-
+# run time of this algorithm:
+# length of string is n, length of remove is m
+# for loop on line 69 is n
+# lookup in dictionariees is O(1) amortized
+# so let's say this is O(n)
 
 
 
